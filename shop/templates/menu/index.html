@@ -1,0 +1,91 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Show Room</title>
+	
+	{% load static %}  
+	<link rel="stylesheet" href= "{% static 'menu.css'%}"/> 
+
+	
+	<style>
+		body {
+		  background-image: url("{% static 'image.jpg' %}");
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-size: cover;
+		}
+	  </style>
+	
+
+</head>
+<body>
+	<h1 style="text-align:center;color:rgb(245, 240, 240);">Super Market</h1>
+	
+	<div class="topnav">
+		<a class="active" href="home">Home</a>
+		<a href="addsoap">Add Soap</a>
+		<a href="addpaste">Add paste</a>
+		<a href="soapdb">Edit Soap</a>
+		<a href="pastedb">Edit paste</a>
+	  </div>
+
+	<ul class="tree">
+		<li id="">
+			<label for="">
+			<a>SOAP</a>
+			</label>
+			<input checked="" id="menu12" value="" type="checkbox">
+			<ul>
+				{%  for s in soaps %}
+			   <li id="">
+				  <label for=""><a>{{s.sname}}</a></label>
+				  <input checked="" id="menu13" value="" type="checkbox">
+				  <ul>
+					 <li id="menu14">
+						<a>
+						<label for="menu14">price : {{s.sprice}}</label>
+						<input checked="" id="menu14" value="" type="checkbox">
+						</a>
+					 </li>
+					<li id="">
+						<a>
+						<label for="">Description:<br>{{s.sdes}}</label>
+						<input checked="" id="menu14" value="" type="checkbox">
+						</a>
+					 </li>
+				  </ul>
+			   </li>
+			   {% endfor %}
+			</ul>
+		 </li>
+		<li id="">
+			<label for="">
+			<a>PASTE</a>
+			</label>
+			<input checked="" id="menu12" value="" type="checkbox">
+			<ul>
+				{%  for s in pastes %}
+			   <li id="">
+				  <label for=""><a>{{s.sname}}</a></label>
+				  <input checked="" id="menu13" value="" type="checkbox">
+				  <ul>
+					 <li id="menu14">
+						<a>
+						<label for="menu14">price : {{s.sprice}}</label>
+						<input checked="" id="menu14" value="" type="checkbox">
+						</a>
+					 </li>
+					<li id="">
+						<a>
+						<label for="">Description:<br>{{s.sdes}}</label>
+						<input checked="" id="menu14" value="" type="checkbox">
+						</a>
+					 </li>
+				  </ul>
+			   </li>
+			   {% endfor %}
+			</ul>
+		 </li>
+
+ </ul></body>
+</html>

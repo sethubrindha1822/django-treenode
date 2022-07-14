@@ -1,0 +1,86 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Show Room</title>
+	
+	{% load static %}  
+	<link rel="stylesheet" href= "{% static 'menu.css'%}"/> 
+
+	
+	<style>
+		body {
+		  background-image: url("{% static 'image.jpg' %}");
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-size: cover;
+		}
+		.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {
+  background-color: #ee6a1d;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+	  </style>
+	  <style>
+		table {
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+		
+		th, td {
+		  text-align: left;
+		  padding: 8px;
+		  border-spacing: 30px
+		}
+		
+		tr:nth-child(even) {
+		  background-color: #D6EEEE;
+		}
+		</style>
+	
+
+
+</head>
+<body><b>
+	<h1 style="text-align:center;color:rgb(255, 255, 255);">Super Market</h1>
+	
+
+	<h2 style="color:rgb(255, 255, 255);">Paste Details</h2>
+	<table style="width:100%;text-align:center;">
+		<thead>
+			<th> Name </th>
+			<th> Price </th>
+			<th> Description </th>
+			</thead>
+			<tr>
+				{%  for s in pastes %}
+				<td>{{s.sname}}</td>
+				<td>{{s.sprice}}</td>
+				<td>{{s.sdes}}</td>
+				<td><a href="update1/{{s.id}}"><button type="button" class ="button" >Update</button></a></td>  
+				<td><a href="delete1/{{s.id}}"><button type="button" class ="button1">Delete</button></a> </td>
+				
+			</tr>
+		{% endfor %}
+	</table>
+</b>
+</body>
+</html>

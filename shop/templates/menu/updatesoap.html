@@ -1,0 +1,32 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Show Room</title>
+	
+	{% load static %}  
+	<link rel="stylesheet" href= "{% static 'menu.css'%}"/> 
+
+	
+	<style>
+		body {
+		  background-image: url("{% static 'image.jpg' %}");
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-size: cover;
+		}
+	  </style>
+	
+
+</head>
+<body>
+	<h1 style="text-align:center;color:rgb(245, 240, 240);">update soap</h1>
+	<h1 style="color:rgb(245, 240, 240);">ADD SOAP</h1>
+	<form method="POST">
+	sname <input type="text" name="sname" value="{{soaps.sname}}">
+	sprice <input type="text" name="sprice" value="{{soaps.sprice}}">
+	sdes <input type="text" name="sdes" value="{{soaps.sdes}}">
+	{%csrf_token%}
+	<input type="submit" value="update">
+	</form>
+</body>
+</html>

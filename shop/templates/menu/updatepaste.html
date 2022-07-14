@@ -1,0 +1,32 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Show Room</title>
+	
+	{% load static %}  
+	<link rel="stylesheet" href= "{% static 'menu.css'%}"/> 
+
+	
+	<style>
+		body {
+		  background-image: url("{% static 'image.jpg' %}");
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-size: cover;
+		}
+	  </style>
+	
+
+</head>
+<body>
+	<h1 style="text-align:center;color:rgb(245, 240, 240);">Update Paste</h1>
+	<h1 style="color:rgb(245, 240, 240);">ADD Paste</h1>
+	<form method="POST">
+	<b>Name</b> <input type="text" name="sname" value="{{pastes.sname}}">
+	<b>Price</b> <input type="text" name="sprice" value="{{pastes.sprice}}">
+	<b>Description</b> <input type="text" name="sdes" value="{{pastes.sdes}}">
+	{%csrf_token%}
+	<button type="submit" class="registerbtn">Update Paste</button>
+	</form>
+</body>
+</html>
