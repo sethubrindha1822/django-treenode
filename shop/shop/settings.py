@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-=b^4hszs&2$$pxc)+&_kwaia93xzs=*(^8-)ul*@n(+=l=slmy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =  False
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['127.0.0.1','djangosupermarketwithtreenode.herokuapp.com']
 
 
 # Application definition
